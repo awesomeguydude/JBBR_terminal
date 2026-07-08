@@ -8,19 +8,22 @@
 </head>
 <body>
     <!-- Loader -->
-    <div id="loader">
+    <div id="loader" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#020202; z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#ffaa44; text-align:center;">
         <h1>△ VANTAGE SYSTEMS AUTHORITY △</h1>
-        <p id="status">INITIALIZING SECURE TERMINAL v4.2.1...</p>
+        <p>INITIALIZING SECURE TERMINAL v4.2.1...</p>
+        <p>VERIFYING CLEARANCE CREDENTIALS...</p>
+        <p>LOADING DOCUMENT: JABBER_FIELDNOTES...</p>
+        <p>DECRYPTING...</p>
         
-        <div class="progress-bar">
-            <div class="progress" id="progressBar"></div>
+        <div class="progress-bar" style="width:380px; height:18px; border:2px solid #e67a00; margin-top:30px; position:relative; overflow:hidden;">
+            <div class="progress" id="progressBar" style="height:100%; width:0%; background:linear-gradient(to right, #ffaa33, #ffdd88);"></div>
         </div>
     </div>
 
     <div class="terminal" id="main-content" style="display:none;">
 
         <header>
-            <h1 class="typing" data-text="△ VANTAGE SYSTEMS AUTHORITY △">△ VANTAGE SYSTEMS AUTHORITY △</h1>
+            <h1>△ VANTAGE SYSTEMS AUTHORITY △</h1>
             <div class="metadata">LAST UPDATED — 07 / 08 / 2026</div>
         </header>
 
@@ -31,7 +34,7 @@
             <tr><td><strong>AUTHOR</strong></td><td>Surveyor Jabber</td></tr>
             <tr><td><strong>DISTRIBUTION</strong></td><td>NOT ALLOWED</td></tr>
             <tr><td><strong>CLEARANCE</strong></td><td>Level-1</td></tr>
-            <tr><td><strong>STATUS</strong></td><td>Working Document</td></tr>
+            <tr><td><strong>STATUS</strong></td><td>Activity - In The Making</td></tr>
             <tr><td><strong>CLASSIFICATION</strong></td><td>Personal Research</td></tr>
         </table>
 
@@ -45,28 +48,22 @@
     </div>
 
     <script>
-        // Dynamic Loader
-        const statuses = ["INITIALIZING SECURE TERMINAL v4.2.1...", "VERIFYING CLEARANCE...", "LOADING DOCUMENT...", "DECRYPTING...", "ACCESS GRANTED"];
         let progress = 0;
         const progressBar = document.getElementById('progressBar');
-        const statusText = document.getElementById('status');
 
-        const loaderInterval = setInterval(() => {
-            progress += Math.random() * 22 + 9;
+        const interval = setInterval(() => {
+            progress += Math.random() * 25 + 10;
             if (progress > 100) progress = 100;
             progressBar.style.width = progress + '%';
 
-            if (progress > 25) statusText.textContent = statuses[1];
-            if (progress > 50) statusText.textContent = statuses[2];
-            if (progress > 75) statusText.textContent = statuses[3];
             if (progress >= 100) {
-                clearInterval(loaderInterval);
+                clearInterval(interval);
                 setTimeout(() => {
                     document.getElementById('loader').style.display = 'none';
                     document.getElementById('main-content').style.display = 'block';
-                }, 300);
+                }, 400);
             }
-        }, 110);
+        }, 130);
     </script>
 </body>
 </html>
