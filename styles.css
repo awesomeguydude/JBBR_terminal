@@ -18,7 +18,6 @@ body {
     min-height: 100vh;
 }
 
-/* Scanlines */
 .terminal::before {
     content: '';
     position: absolute;
@@ -43,11 +42,6 @@ h1 {
     font-size: 1.95em;
     margin: 10px 0;
     text-shadow: 0 0 15px #ffaa00;
-}
-
-.metadata {
-    color: #ffaa44;
-    font-size: 0.95em;
 }
 
 h2 {
