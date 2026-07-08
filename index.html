@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VSA CLASSIFIED — BISHOP FIELD RESEARCH NOTES</title>
+    <title>VSA CLASSIFIED — JABBER FIELD RESEARCH NOTES</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="terminal">
+    <!-- Loading Screen -->
+    <div id="loader" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#030303; z-index:9999; display:flex; align-items:center; justify-content:center; flex-direction:column; color:#ffaa33;">
+        <h1 style="margin-bottom:20px;">△ VANTAGE SYSTEMS AUTHORITY △</h1>
+        <p>INITIALIZING SECURE TERMINAL v4.2.1...</p>
+        <p>VERIFYING CLEARANCE CREDENTIALS...</p>
+        <p>LOADING DOCUMENT: JABBER_FIELDNOTES_COMPREHENSIVE...</p>
+        <p style="margin-top:30px;">DECRYPTING...</p>
+    </div>
+
+    <div class="terminal" id="main-content" style="display:none;">
 
         <header>
             <h1>△ VANTAGE SYSTEMS AUTHORITY △</h1>
@@ -15,10 +24,10 @@
         </header>
 
         <h2>SURVEYOR FIELD RESEARCH NOTES</h2>
-        <p style="text-align:center; color:#ffcc88; margin-bottom:30px;">Comprehensive Edition — Ongoing Revision</p>
+        <p style="text-align:center; color:#ffcc99; margin-bottom:30px;">Comprehensive Edition — Ongoing Revision</p>
 
         <table class="metadata-table">
-            <tr><td><strong>AUTHOR</strong></td><td>Surveyor Bishop</td></tr>
+            <tr><td><strong>AUTHOR</strong></td><td>Surveyor Jabber</td></tr>
             <tr><td><strong>DISTRIBUTION</strong></td><td>NOT ALLOWED</td></tr>
             <tr><td><strong>CLEARANCE</strong></td><td>Level-1</td></tr>
             <tr><td><strong>STATUS</strong></td><td>Working Document</td></tr>
@@ -30,15 +39,20 @@
         </div>
 
         <h3>00 PREFATORY NOTE</h3>
-        <p>I want to be clear about what this document is and what it is not. It is not a formal report...</p>
-
-        <h3>FIELD GLOSSARY</h3>
-        <p><strong>ITF</strong> — Interdimensional Transit Frame. A structure within the portal that manipulates the fabric of reality itself.</p>
+        <p>I want to be clear about what this document is...</p>
 
         <footer class="footer">
             SYSTEM STATUS: OPERATIONAL &nbsp;&nbsp; 18 FILES LOADED &nbsp;&nbsp; MEM: 53.9%
         </footer>
 
     </div>
+
+    <script>
+        // Loading animation
+        setTimeout(() => {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+        }, 2800);
+    </script>
 </body>
 </html>
