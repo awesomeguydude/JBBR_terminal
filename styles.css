@@ -4,20 +4,21 @@ body {
     font-family: 'Courier New', monospace;
     margin: 0;
     padding: 0;
-    line-height: 1.45;
+    line-height: 1.5;
 }
 
 .terminal {
-    max-width: 980px;
-    margin: 40px auto;
-    border: 2px solid #e67a00;
+    max-width: 920px;
+    margin: 60px auto;
+    border: 3px solid #e67a00;
     background: #0a0a0a;
-    padding: 25px 35px;
-    box-shadow: 0 0 60px rgba(230, 122, 0, 0.75);
+    padding: 35px 45px;
+    box-shadow: 0 0 70px rgba(230, 122, 0, 0.85);
     position: relative;
-    min-height: 620px;
+    min-height: 680px;
 }
 
+/* Scanlines */
 .terminal::before {
     content: '';
     position: absolute;
@@ -32,20 +33,55 @@ body {
     pointer-events: none;
 }
 
-h1 { color: #ffaa33; font-size: 1.65em; text-align: center; }
-h2 { color: #ffaa33; text-align: center; font-size: 1.45em; }
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
 
-.metadata-table td { padding: 8px 14px; border-bottom: 1px solid #e67a00; }
+h1 {
+    color: #ffcc00;
+    font-size: 1.85em;
+    margin: 10px 0;
+}
+
+.metadata {
+    color: #ffaa55;
+    font-size: 0.95em;
+}
+
+h2 {
+    color: #ffcc00;
+    text-align: center;
+    font-size: 1.55em;
+    margin: 25px 0 15px;
+}
+
+.metadata-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+}
+
+.metadata-table td {
+    padding: 9px 15px;
+    border-bottom: 1px solid #e67a00;
+}
 
 .warning {
     border: 2px solid #e67a00;
-    padding: 12px;
+    padding: 14px 25px;
     text-align: center;
-    margin: 20px 0;
+    margin: 30px 0;
+    color: #ffdd99;
+    font-weight: bold;
 }
 
 .footer {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
     text-align: center;
-    margin-top: 40px;
-    font-size: 0.85em;
+    font-size: 0.88em;
+    color: #ffcc88;
 }
