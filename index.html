@@ -7,32 +7,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Top Bar -->
     <div class="top-bar">
         △ VANTAGE SYSTEMS AUTHORITY — CLASSIFIED TERMINAL △
     </div>
 
     <!-- Loader -->
-    <div id="loader">
+    <div id="loader" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#0a0a0a; z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#ffaa44;">
         <h1>△ VANTAGE SYSTEMS AUTHORITY △</h1>
         <p>INITIALIZING SECURE TERMINAL v4.2.1...</p>
         <p>VERIFYING CLEARANCE CREDENTIALS...</p>
         <p>LOADING DOCUMENT: JABBER_FIELDNOTES...</p>
         <p>DECRYPTING...</p>
-        
-        <div class="progress-bar">
-            <div class="progress" id="progressBar"></div>
+        <div class="progress-bar" style="width:380px;height:18px;border:2px solid #e68a00;margin-top:30px;position:relative;overflow:hidden;">
+            <div class="progress" id="progressBar" style="height:100%;width:0%;background:linear-gradient(to right,#ffaa33,#ffdd88);"></div>
         </div>
     </div>
 
-    <!-- Main Content -->
     <div class="terminal" id="main-content" style="display:none;">
 
-        <header>
-            <div class="metadata">LAST UPDATED — 07 / 08 / 2026</div>
-            <h2>SURVEYOR FIELD RESEARCH NOTES</h2>
-            <p style="text-align:center; color:#ffcc99; margin:15px 0 25px;">Comprehensive Edition — Ongoing Revision</p>
-        </header>
+        <div class="metadata">LAST UPDATED — 07 / 08 / 2026</div>
+
+        <h2>SURVEYOR FIELD RESEARCH NOTES</h2>
+        <p style="text-align:center; color:#ffcc99;">Comprehensive Edition — Ongoing Revision</p>
 
         <table class="metadata-table">
             <tr><td><strong>AUTHOR</strong></td><td><em>Surveyor Jabber</em></td></tr>
@@ -47,9 +43,8 @@
         </div>
     </div>
 
-    <!-- Bottom Bar -->
     <div class="bottom-bar">
-        SYSTEM STATUS: OPERATIONAL &nbsp;&nbsp;&nbsp; 23 FILES LOADED &nbsp;&nbsp;&nbsp; MEM: 47.2%
+        SYSTEM STATUS: OPERATIONAL &nbsp;&nbsp; 23 FILES LOADED &nbsp;&nbsp; MEM: 47.2%
     </div>
 
     <script>
@@ -57,7 +52,7 @@
         const progressBar = document.getElementById('progressBar');
 
         const interval = setInterval(() => {
-            progress += Math.random() * 25 + 10;
+            progress += Math.random() * 22 + 12;
             if (progress > 100) progress = 100;
             progressBar.style.width = progress + '%';
 
