@@ -85,3 +85,35 @@ h2 {
     font-size: 0.88em;
     color: #ffcc88;
 }
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #0a0a0a;
+    border-bottom: 2px solid #e67a00;
+    text-align: center;
+    padding: 8px;
+    color: #ffcc00;
+    font-size: 1.1em;
+    z-index: 100;
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0a0a0a;
+    border-top: 2px solid #e67a00;
+    text-align: center;
+    padding: 8px;
+    color: #ffcc88;
+    font-size: 0.9em;
+    z-index: 100;
+}
+
+.terminal {
+    margin: 70px 40px 70px;
+    max-width: 920px;
+}
