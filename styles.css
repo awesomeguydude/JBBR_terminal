@@ -8,21 +8,32 @@ body {
     overflow: hidden;
 }
 
-/* CRT Curvature */
+/* CRT Container */
 .terminal {
     max-width: 980px;
     margin: 40px auto;
     border: 2px solid #e67a00;
     background: #0a0a0a;
     padding: 25px 35px;
-    box-shadow: 0 0 60px rgba(230, 122, 0, 0.75);
+    box-shadow: 0 0 60px rgba(230, 122, 0, 0.8);
     position: relative;
     min-height: 620px;
     border-radius: 4px;
     transform: perspective(800px) rotateX(2deg);
+    overflow: hidden;
 }
 
-/* Scanlines */
+/* Stronger Phosphor Glow */
+.terminal::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    box-shadow: inset 0 0 80px rgba(255, 180, 80, 0.25);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Scanlines + Flicker */
 .terminal::before {
     content: '';
     position: absolute;
@@ -30,11 +41,18 @@ body {
     background: repeating-linear-gradient(
         transparent 0px,
         transparent 3px,
-        rgba(255, 180, 80, 0.07) 3px,
-        rgba(255, 180, 80, 0.07) 6px
+        rgba(255, 180, 80, 0.08) 3px,
+        rgba(255, 180, 80, 0.08) 6px
     );
     z-index: 1;
     pointer-events: none;
+    animation: scanline-flicker 0.15s infinite linear;
+}
+
+@keyframes scanline-flicker {
+    0% { opacity: 0.95; }
+    50% { opacity: 0.65; }
+    100% { opacity: 0.95; }
 }
 
 header { text-align: center; margin-bottom: 18px; }
@@ -43,7 +61,28 @@ h1 {
     color: #ffaa33;
     font-size: 1.65em;
     margin: 8px 0;
-    text-shadow: 0 0 12px #e67a00;
+    text-shadow: 0 0 18px #ffaa33;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Typing Effect */
+.typing {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 3px solid #ffaa33;
+    animation: typing 3.5s steps(40, end) forwards,
+             blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #ffaa33; }
 }
 
 h2 {
@@ -64,7 +103,6 @@ h2 {
     text-align: center;
     margin: 22px 0;
     color: #ffcc99;
-    font-size: 0.95em;
 }
 
 .footer {
@@ -87,20 +125,4 @@ h2 {
     align-items: center;
     justify-content: center;
     color: #ffaa44;
-    font-size: 1.05em;
-}
-
-.progress-bar {
-    width: 380px;
-    height: 18px;
-    border: 2px solid #e67a00;
-    margin-top: 25px;
-    position: relative;
-    overflow: hidden;
-}
-
-.progress {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(to right, #ffaa33, #ffdd88);
 }
