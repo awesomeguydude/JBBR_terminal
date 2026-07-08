@@ -8,6 +8,7 @@ body {
     overflow: hidden;
 }
 
+/* CRT Curvature */
 .terminal {
     max-width: 980px;
     margin: 40px auto;
@@ -17,6 +18,8 @@ body {
     box-shadow: 0 0 60px rgba(230, 122, 0, 0.75);
     position: relative;
     min-height: 620px;
+    border-radius: 4px;
+    transform: perspective(800px) rotateX(2deg);
 }
 
 /* Scanlines */
@@ -27,17 +30,14 @@ body {
     background: repeating-linear-gradient(
         transparent 0px,
         transparent 3px,
-        rgba(255, 180, 80, 0.06) 3px,
-        rgba(255, 180, 80, 0.06) 6px
+        rgba(255, 180, 80, 0.07) 3px,
+        rgba(255, 180, 80, 0.07) 6px
     );
     z-index: 1;
     pointer-events: none;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 18px;
-}
+header { text-align: center; margin-bottom: 18px; }
 
 h1 {
     color: #ffaa33;
@@ -46,22 +46,11 @@ h1 {
     text-shadow: 0 0 12px #e67a00;
 }
 
-.metadata {
-    color: #ffaa55;
-    font-size: 0.9em;
-}
-
 h2 {
     color: #ffaa33;
     text-align: center;
     font-size: 1.45em;
     margin: 22px 0 12px;
-}
-
-.metadata-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 18px 0;
 }
 
 .metadata-table td {
@@ -81,8 +70,7 @@ h2 {
 .footer {
     position: absolute;
     bottom: 15px;
-    left: 0;
-    right: 0;
+    left: 0; right: 0;
     text-align: center;
     font-size: 0.82em;
     color: #ffbb88;
@@ -91,7 +79,7 @@ h2 {
 /* Loader */
 #loader {
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
+    inset: 0;
     background: #020202;
     z-index: 9999;
     display: flex;
@@ -99,14 +87,14 @@ h2 {
     align-items: center;
     justify-content: center;
     color: #ffaa44;
-    font-size: 1.1em;
+    font-size: 1.05em;
 }
 
 .progress-bar {
     width: 380px;
     height: 18px;
     border: 2px solid #e67a00;
-    margin-top: 30px;
+    margin-top: 25px;
     position: relative;
     overflow: hidden;
 }
@@ -115,9 +103,4 @@ h2 {
     height: 100%;
     width: 0%;
     background: linear-gradient(to right, #ffaa33, #ffdd88);
-    animation: load 2.8s linear forwards;
-}
-
-@keyframes load {
-    to { width: 100%; }
 }
