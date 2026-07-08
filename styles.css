@@ -1,34 +1,33 @@
 body {
     background: #0a0a0a;
-    color: #ffcc66;
+    color: #ffbb77;
     font-family: 'Courier New', monospace;
     margin: 0;
-    padding: 20px;
-    line-height: 1.5;
-    overflow-x: hidden;
+    padding: 30px 20px;
+    line-height: 1.55;
 }
 
 .terminal {
-    max-width: 1100px;
+    max-width: 1150px;
     margin: 0 auto;
-    border: 2px solid #ff9500;
-    background: #111111;
-    padding: 25px 35px;
-    box-shadow: 0 0 60px rgba(255, 149, 0, 0.7);
+    border: 2px solid #e68a00;
+    background: #0f0f0f;
+    padding: 30px 40px;
+    box-shadow: 0 0 70px rgba(230, 138, 0, 0.65);
     position: relative;
-    min-height: 90vh;
+    min-height: 95vh;
 }
 
-/* Scanlines effect */
+/* Stronger scanlines */
 .terminal::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background: repeating-linear-gradient(
         transparent 0px,
-        transparent 4px,
-        rgba(255, 255, 255, 0.04) 4px,
-        rgba(255, 255, 255, 0.04) 8px
+        transparent 3px,
+        rgba(255, 180, 100, 0.06) 3px,
+        rgba(255, 180, 100, 0.06) 6px
     );
     pointer-events: none;
     z-index: 1;
@@ -36,68 +35,69 @@ body {
 
 header {
     text-align: center;
-    border-bottom: 1px solid #ff9500;
-    padding-bottom: 15px;
-    margin-bottom: 25px;
+    border-bottom: 2px solid #e68a00;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 h1 {
-    color: #ffcc00;
-    font-size: 1.8em;
-    margin: 10px 0;
-    text-shadow: 0 0 15px #ff9500;
-}
-
-.metadata {
-    color: #ffaa44;
-    font-size: 0.95em;
-    letter-spacing: 1px;
+    color: #ffcc33;
+    font-size: 2em;
+    margin: 8px 0;
+    text-shadow: 0 0 20px #ff9500;
 }
 
 h2 {
-    color: #ffaa00;
+    color: #ffaa22;
     text-align: center;
-    margin: 20px 0 10px;
-    font-size: 1.6em;
+    font-size: 1.65em;
+    margin: 25px 0 15px;
 }
 
 .metadata-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
-    border: 1px solid #ff9500;
+    margin: 25px 0;
+    border: 1px solid #e68a00;
 }
 
 .metadata-table td {
-    padding: 10px 15px;
-    border: 1px solid #ff9500;
+    padding: 12px 18px;
+    border: 1px solid #e68a00;
+    vertical-align: top;
 }
 
 .warning {
-    border: 2px solid #ff9500;
-    padding: 12px;
+    border: 2px solid #e68a00;
+    color: #ffdd88;
+    padding: 14px;
     text-align: center;
-    margin: 25px 0;
-    color: #ffaa00;
+    margin: 30px 0;
     font-weight: bold;
+}
+
+.section {
+    margin: 35px 0;
+    padding-left: 22px;
+    border-left: 4px solid #e68a00;
+}
+
+.redacted {
+    background: #000;
+    color: #000;
+    padding: 3px 8px;
+    border: 1px solid #ff3333;
+    font-family: monospace;
 }
 
 .footer {
     position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
+    bottom: 25px;
+    left: 40px;
+    right: 40px;
     text-align: center;
-    font-size: 0.85em;
-    color: #ffaa33;
-    border-top: 1px solid #ff9500;
+    font-size: 0.9em;
+    color: #ffbb77;
+    border-top: 1px solid #e68a00;
     padding-top: 15px;
-}
-
-/* Field Glossary Styling */
-.glossary {
-    background: rgba(30, 30, 30, 0.8);
-    border: 1px solid #ff9500;
-    padding: 20px;
-    margin: 25px 0;
 }
