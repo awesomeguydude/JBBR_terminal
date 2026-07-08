@@ -3,45 +3,101 @@ body {
     color: #ffcc66;
     font-family: 'Courier New', monospace;
     margin: 0;
-    padding: 40px 20px;
-    line-height: 1.6;
+    padding: 20px;
+    line-height: 1.5;
     overflow-x: hidden;
 }
 
 .terminal {
     max-width: 1100px;
     margin: 0 auto;
-    border: 3px solid #ff9500;
-    background: rgba(10, 10, 10, 0.98);
-    padding: 35px;
-    box-shadow: 0 0 50px rgba(255, 149, 0, 0.6);
+    border: 2px solid #ff9500;
+    background: #111111;
+    padding: 25px 35px;
+    box-shadow: 0 0 60px rgba(255, 149, 0, 0.7);
     position: relative;
+    min-height: 90vh;
 }
 
-/* Fake scanlines */
+/* Scanlines effect */
 .terminal::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background: repeating-linear-gradient(
         transparent 0px,
-        transparent 3px,
-        rgba(255,255,255,0.03) 3px,
-        rgba(255,255,255,0.03) 6px
+        transparent 4px,
+        rgba(255, 255, 255, 0.04) 4px,
+        rgba(255, 255, 255, 0.04) 8px
     );
     pointer-events: none;
     z-index: 1;
 }
 
-h1, h2, h3 {
+header {
+    text-align: center;
+    border-bottom: 1px solid #ff9500;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+h1 {
     color: #ffcc00;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px #ff9500;
+    font-size: 1.8em;
+    margin: 10px 0;
+    text-shadow: 0 0 15px #ff9500;
 }
 
 .metadata {
+    color: #ffaa44;
+    font-size: 0.95em;
+    letter-spacing: 1px;
+}
+
+h2 {
+    color: #ffaa00;
+    text-align: center;
+    margin: 20px 0 10px;
+    font-size: 1.6em;
+}
+
+.metadata-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border: 1px solid #ff9500;
+}
+
+.metadata-table td {
+    padding: 10px 15px;
+    border: 1px solid #ff9500;
+}
+
+.warning {
+    border: 2px solid #ff9500;
+    padding: 12px;
+    text-align: center;
+    margin: 25px 0;
+    color: #ffaa00;
+    font-weight: bold;
+}
+
+.footer {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.85em;
     color: #ffaa33;
-    font-size: 0.9em;
-    margin-bottom: 20px;
+    border-top: 1px solid #ff9500;
+    padding-top: 15px;
+}
+
+/* Field Glossary Styling */
+.glossary {
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid #ff9500;
+    padding: 20px;
+    margin: 25px 0;
 }
