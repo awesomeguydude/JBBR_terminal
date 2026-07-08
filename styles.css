@@ -1,0 +1,47 @@
+body {
+    background: #0a0a0a;
+    color: #ffcc66;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 40px 20px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.terminal {
+    max-width: 1100px;
+    margin: 0 auto;
+    border: 3px solid #ff9500;
+    background: rgba(10, 10, 10, 0.98);
+    padding: 35px;
+    box-shadow: 0 0 50px rgba(255, 149, 0, 0.6);
+    position: relative;
+}
+
+/* Fake scanlines */
+.terminal::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        transparent 0px,
+        transparent 3px,
+        rgba(255,255,255,0.03) 3px,
+        rgba(255,255,255,0.03) 6px
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+h1, h2, h3 {
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #ff9500;
+}
+
+.metadata {
+    color: #ffaa33;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
