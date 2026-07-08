@@ -7,13 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loader" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#030303; z-index:9999; display:flex; align-items:center; justify-content:center; flex-direction:column; color:#ffaa33;">
-        <h1 style="margin-bottom:20px;">△ VANTAGE SYSTEMS AUTHORITY △</h1>
-        <p>INITIALIZING SECURE TERMINAL v4.2.1...</p>
+    <!-- Loader -->
+    <div id="loader">
+        <h1>△ VANTAGE SYSTEMS AUTHORITY △</h1>
+        <p style="margin:8px 0;">VSA SECURE TERMINAL v4.2.1</p>
+        <p>INITIALIZING ENCRYPTED SESSION...</p>
         <p>VERIFYING CLEARANCE CREDENTIALS...</p>
-        <p>LOADING DOCUMENT: JABBER_FIELDNOTES_COMPREHENSIVE...</p>
-        <p style="margin-top:30px;">DECRYPTING...</p>
+        <p>LOADING DOCUMENT: JABBER_FIELDNOTES...</p>
+        <p>DECRYPTING...</p>
+        
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
     </div>
 
     <div class="terminal" id="main-content" style="display:none;">
@@ -24,7 +29,7 @@
         </header>
 
         <h2>SURVEYOR FIELD RESEARCH NOTES</h2>
-        <p style="text-align:center; color:#ffcc99; margin-bottom:30px;">Comprehensive Edition — Ongoing Revision</p>
+        <p style="text-align:center; color:#ffcc99;">Comprehensive Edition — Ongoing Revision</p>
 
         <table class="metadata-table">
             <tr><td><strong>AUTHOR</strong></td><td>Surveyor Jabber</td></tr>
@@ -38,21 +43,16 @@
             ▲ DISTRIBUTION NOT ALLOWED — CLEARANCE LEVEL-1 — RETAINED FOR PERSONAL RECORD ▲
         </div>
 
-        <h3>00 PREFATORY NOTE</h3>
-        <p>I want to be clear about what this document is...</p>
-
         <footer class="footer">
             SYSTEM STATUS: OPERATIONAL &nbsp;&nbsp; 18 FILES LOADED &nbsp;&nbsp; MEM: 53.9%
         </footer>
-
     </div>
 
     <script>
-        // Loading animation
         setTimeout(() => {
             document.getElementById('loader').style.display = 'none';
             document.getElementById('main-content').style.display = 'block';
-        }, 2800);
+        }, 3200);
     </script>
 </body>
 </html>
