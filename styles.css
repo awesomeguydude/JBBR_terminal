@@ -1,103 +1,50 @@
-body {
-    background: #0a0a0a;
-    color: #ffbb77;
-    font-family: 'Courier New', monospace;
-    margin: 0;
-    padding: 30px 20px;
-    line-height: 1.55;
-}
-
-.terminal {
-    max-width: 1150px;
-    margin: 0 auto;
-    border: 2px solid #e68a00;
-    background: #0f0f0f;
-    padding: 30px 40px;
-    box-shadow: 0 0 70px rgba(230, 138, 0, 0.65);
+/* Glitch Effect */
+.glitch {
     position: relative;
-    min-height: 95vh;
+    animation: glitch-skew 4s infinite linear alternate-reverse;
 }
 
-/* Stronger scanlines */
-.terminal::before {
-    content: '';
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: repeating-linear-gradient(
-        transparent 0px,
-        transparent 3px,
-        rgba(255, 180, 100, 0.06) 3px,
-        rgba(255, 180, 100, 0.06) 6px
-    );
-    pointer-events: none;
-    z-index: 1;
-}
-
-header {
-    text-align: center;
-    border-bottom: 2px solid #e68a00;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
-}
-
-h1 {
-    color: #ffcc33;
-    font-size: 2em;
-    margin: 8px 0;
-    text-shadow: 0 0 20px #ff9500;
-}
-
-h2 {
-    color: #ffaa22;
-    text-align: center;
-    font-size: 1.65em;
-    margin: 25px 0 15px;
-}
-
-.metadata-table {
+    top: 0;
+    left: 0;
     width: 100%;
-    border-collapse: collapse;
-    margin: 25px 0;
-    border: 1px solid #e68a00;
+    height: 100%;
 }
 
-.metadata-table td {
-    padding: 12px 18px;
-    border: 1px solid #e68a00;
-    vertical-align: top;
+.glitch::before {
+    animation: glitch-anim 2s infinite linear alternate-reverse;
+    color: #ff00ff;
+    left: 2px;
+    text-shadow: -2px 0 #00ffff;
+    clip: rect(0, 900px, 0, 0);
 }
 
-.warning {
-    border: 2px solid #e68a00;
-    color: #ffdd88;
-    padding: 14px;
-    text-align: center;
-    margin: 30px 0;
-    font-weight: bold;
+.glitch::after {
+    animation: glitch-anim2 3s infinite linear alternate-reverse;
+    color: #00ffff;
+    left: -2px;
+    text-shadow: 2px 0 #ff00ff;
+    clip: rect(0, 900px, 0, 0);
 }
 
-.section {
-    margin: 35px 0;
-    padding-left: 22px;
-    border-left: 4px solid #e68a00;
+@keyframes glitch-anim {
+    0% { clip: rect(25px, 9999px, 56px, 0); }
+    5% { clip: rect(42px, 9999px, 78px, 0); }
+    10% { clip: rect(10px, 9999px, 35px, 0); }
+    15% { clip: rect(60px, 9999px, 85px, 0); }
 }
 
-.redacted {
-    background: #000;
-    color: #000;
-    padding: 3px 8px;
-    border: 1px solid #ff3333;
-    font-family: monospace;
+@keyframes glitch-anim2 {
+    0% { clip: rect(65px, 9999px, 100px, 0); }
+    5% { clip: rect(20px, 9999px, 55px, 0); }
+    10% { clip: rect(45px, 9999px, 70px, 0); }
 }
 
-.footer {
-    position: absolute;
-    bottom: 25px;
-    left: 40px;
-    right: 40px;
-    text-align: center;
-    font-size: 0.9em;
-    color: #ffbb77;
-    border-top: 1px solid #e68a00;
-    padding-top: 15px;
+@keyframes glitch-skew {
+    0% { transform: skew(0deg); }
+    10% { transform: skew(1deg); }
+    20% { transform: skew(-2deg); }
 }
