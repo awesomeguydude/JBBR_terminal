@@ -10,14 +10,10 @@
     <!-- Loader -->
     <div id="loader">
         <h1>△ VANTAGE SYSTEMS AUTHORITY △</h1>
-        <p style="margin:8px 0;">VSA SECURE TERMINAL v4.2.1</p>
-        <p>INITIALIZING ENCRYPTED SESSION...</p>
-        <p>VERIFYING CLEARANCE CREDENTIALS...</p>
-        <p>LOADING DOCUMENT: JABBER_FIELDNOTES...</p>
-        <p>DECRYPTING...</p>
+        <p id="status">INITIALIZING SECURE TERMINAL v4.2.1...</p>
         
         <div class="progress-bar">
-            <div class="progress"></div>
+            <div class="progress" id="progressBar"></div>
         </div>
     </div>
 
@@ -49,10 +45,37 @@
     </div>
 
     <script>
-        setTimeout(() => {
-            document.getElementById('loader').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-        }, 3200);
+        const statuses = [
+            "INITIALIZING SECURE TERMINAL v4.2.1...",
+            "VERIFYING CLEARANCE CREDENTIALS...",
+            "LOADING DOCUMENT: JABBER_FIELDNOTES_COMPREHENSIVE...",
+            "DECRYPTING...",
+            "ACCESSING CLASSIFIED TERMINAL..."
+        ];
+
+        let progress = 0;
+        const progressBar = document.getElementById('progressBar');
+        const statusText = document.getElementById('status');
+
+        const interval = setInterval(() => {
+            progress += Math.random() * 18 + 8;
+            if (progress > 100) progress = 100;
+
+            progressBar.style.width = progress + '%';
+
+            if (progress > 20 && progress < 45) statusText.textContent = statuses[1];
+            else if (progress > 45 && progress < 70) statusText.textContent = statuses[2];
+            else if (progress > 70 && progress < 90) statusText.textContent = statuses[3];
+            else if (progress > 90) statusText.textContent = statuses[4];
+
+            if (progress >= 100) {
+                clearInterval(interval);
+                setTimeout(() => {
+                    document.getElementById('loader').style.display = 'none';
+                    document.getElementById('main-content').style.display = 'block';
+                }, 400);
+            }
+        }, 120);
     </script>
 </body>
 </html>
